@@ -19,7 +19,7 @@ public class RandomLetter {
 		String name = kb.next(); 
 		
 		System.out.println(name+"ดิ "+firstWord[firstNum]+ " "+secondWord[secondNum]+" "+thirdWord[thirdNum]);
-		System.out.println("Hello");
+		System.out.println("Hell");
 		kb.close();
 		
 	}
