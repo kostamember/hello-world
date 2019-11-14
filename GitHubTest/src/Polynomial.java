@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import Section1.Polynomial;
-
 public class Polynomial {
 
 	static PolynomialC [] polys = new PolynomialC[100]; // 다항식의 수
