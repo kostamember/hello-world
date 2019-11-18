@@ -9,13 +9,15 @@ public class LottoGame {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Scanner kb = new Scanner(System.in);
+		
 		System.out.println("***로또게임***");
 		while (true) {	
+			Scanner kb = new Scanner(System.in);
 			System.out.print(gameCoin+"번쨰 게임, 숫자 여섯개를 입력하세요 : ");
 			for (int i = 0; i < 6; i++) {
 				GuessNum[i] = kb.nextInt();
 			}
+			
 			gameCoin++;
 			for (int i = 0; i < 6; i++) {
 				lottoNum[i] = (int) (Math.random() * 45) + 1;
@@ -68,6 +70,7 @@ public class LottoGame {
 			}
 			System.out.println();
 		}
+		
 
 	}
 
