@@ -72,12 +72,11 @@ public class ShapeApplication {
 
 
 	private void reallocate() {
-		Shape [] temp = new Shape[capacity*2];
-		for(int i=0; i<n; i++) {
-			temp[i] = shapes[i];
-		}
-		shapes = temp;
 		capacity *= 2;
+		Shape [] temp = new Shape[capacity];
+		System.arraycopy(shapes, 0, temp, 0, shapes.length);
+		shapes = temp;
+		
 		
 	}
 
