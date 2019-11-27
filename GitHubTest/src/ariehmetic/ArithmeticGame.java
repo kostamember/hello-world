@@ -37,10 +37,10 @@ public class ArithmeticGame {
 			
 	
 			if (Answer == myAnswer) {
-				System.out.println("You right");
+				//System.out.println("You right");
 				point += 1;
 			}	else {
-				System.out.println("No, you suck");
+				//System.out.println("No, you suck");
 			}
 			
 			
@@ -64,7 +64,12 @@ public class ArithmeticGame {
 
 
 	private void resultPrint() {
-		System.out.println("당신은 "+point+"개 맞췄다");
+		int disco = 10 -point;
+		double per = point*10;
+		System.out.println("[결과 ] 정답: "+point+"개");
+		System.out.println("        오답: "+disco+"개");
+		System.out.println("       정답률: "+per+"%");
+		
 		
 	}
 
