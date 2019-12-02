@@ -5,6 +5,13 @@ public class LottoGame02 {
 	static int [] guessNum = new int[6];
 	static int [] lottoNum = new int[7];
 	static int count = 0;
+	
+	static int failed = 0;
+	static int fourth =0;
+	static int third = 0;
+	static int second = 0;
+	static int first = 0;
+	
 	static Scanner kb = new Scanner(System.in);
 	public void CommandProcessor() {
 		
@@ -32,6 +39,7 @@ public class LottoGame02 {
 				lottoNumAn();
 				compareNum();
 		}
+		showAllResult();
 	}
 
 
@@ -77,37 +85,56 @@ public class LottoGame02 {
 		}
 		showResult();
 		
+		
 	}
 		
+	private void showAllResult() {
+		System.out.println("1등: "+first+"회");
+		System.out.println("2등: "+second+"회");
+		System.out.println("3등: "+third+"회");
+		System.out.println("4등: "+fourth+"회");
+		System.out.println("꽝: "+failed+"회");
+		
+		first =0; second=0; third =0; fourth =0; failed=0;
+	}
+
+
 	private void showResult() {
 		switch (count) {
 
 		case 0:
 			System.out.println("꽝! 하나도 못 마추셨네요ㅜㅠ");
+			failed++;
 			break;
 		case 1:
 			System.out.println("꽝! 하나 맞추셨어요.");
+			failed++;
 			break;
 		case 2:
 			System.out.println("꽝! 두 개 맞추셨습니다.");
+			failed++;
 			break;
 		case 3:
-			System.out.println("4등 당첨: 상금 5천원");
+			System.out.println("*4등 당첨: 상금 5천원*");
+			fourth++;
 			break;
 		case 4:
-			System.out.println("3등 당첨: 상금 5만원");
+			System.out.println("**3등 당첨: 상금 5만원**");
+			third++;
 			break;
 		case 5:
 			for(int i=0; i<6; i++) {
 				if(lottoNum[6] == guessNum[i]) {
-					System.out.println("2등 당첨: 상금 1억원");
+					System.out.println("****2등 당첨: 상금 1억원****");
+					second++;
 				} else {
-					System.out.println("3등 당첨: 상금 150만언");
+					System.out.println("***3등 당첨: 상금 150만원***");
+					first++;
 				}
 			}
 			break;
 		case 6:
-			System.out.println("1등 당첨: 상금 10억");
+			System.out.println("*****1등 당첨: 상금 10억*****");
 			break;
 		}
 		count = 0;
